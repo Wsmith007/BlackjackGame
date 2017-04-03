@@ -5,6 +5,7 @@ import junit.framework.TestCase;
  */
 public class CardTest extends TestCase {
 
+    private final String SPADE = "\u2660", HEART = "\u2661", DIAMOND = "\u2662", CLUB = "\u2663";
     private Card c1, c2, c3, c4, c5, c6, c7;
 
     protected void setUp() throws Exception {
@@ -24,54 +25,60 @@ public class CardTest extends TestCase {
         //3 of ???
         c7 = new Card(3,4);
     }
+    public void testGetValue() throws Exception {
+        int test = c2.getValue() + c3.getValue();
+        assertEquals("The value should equal 20 and it is " + test,20,test);
+        System.out.println("The value should equal 20 and it is " + test + ": PASS");
+        System.out.println("==========================================================");
+    }
 
-    public void testValueString() throws Exception {
+        public void testValueString() throws Exception {
         assertEquals("Ace is expected, and it says " + c1.getValueString(), "Ace", c1.getValueString());
-        System.out.println("Ace is expected, and it says " + c1.getValueString() + " PASS");
+        System.out.println("Ace is expected, and it says " + c1.getValueString() + ": PASS");
         assertEquals("Jack is expected, and it says " + c2.getValueString(), "Jack", c2.getValueString());
-        System.out.println("Jack is expected, and it says " + c2.getValueString() + " PASS");
+        System.out.println("Jack is expected, and it says " + c2.getValueString() + ": PASS");
         assertEquals("Queen is expected, and it says " + c3.getValueString(), "Queen", c3.getValueString());
-        System.out.println("Queen is expected, and it says " + c3.getValueString() + " PASS");
+        System.out.println("Queen is expected, and it says " + c3.getValueString() + ": PASS");
         assertEquals("King is expected, and it says " + c4.getValueString(), "King", c4.getValueString());
-        System.out.println("King is expected, and it says " + c4.getValueString() + " PASS");
+        System.out.println("King is expected, and it says " + c4.getValueString() + ": PASS");
         assertEquals("5 is expected, and it says " + c5.getValueString(), "5", c5.getValueString());
-        System.out.println("5 is expected, and it says " + c5.getValueString() + " PASS");
+        System.out.println("5 is expected, and it says " + c5.getValueString() + ": PASS");
         assertEquals("?? is expected, and it says " + c6.getValueString(), "??", c6.getValueString());
-        System.out.println("?? is expected, and it says " + c6.getValueString() + " PASS");
+        System.out.println("?? is expected, and it says " + c6.getValueString() + ": PASS");
         assertEquals("3 is expected, and it says " + c7.getValueString(), "3", c7.getValueString());
-        System.out.println("3 is expected, and it says " + c7.getValueString() + " PASS");
+        System.out.println("3 is expected, and it says " + c7.getValueString() + ": PASS");
         System.out.println("==========================================================");
     }
 
     public void testSuitString() throws Exception {
-        assertEquals("Spades is expected, and it says " + c1.getSuitString(), "Spades", c1.getSuitString());
-        System.out.println("Spades is expected, and it says " + c1.getSuitString() + " PASS");
-        assertEquals("Hearts is expected, and it says " + c2.getSuitString(), "Hearts", c2.getSuitString());
-        System.out.println("Hearts is expected, and it says " + c2.getSuitString() + " PASS");
-        assertEquals("Diamonds is expected, and it says " + c3.getSuitString(), "Diamonds", c3.getSuitString());
-        System.out.println("Diamonds is expected, and it says " + c3.getSuitString() + " PASS");
-        assertEquals("Clubs is expected, and it says " + c4.getSuitString(), "Clubs", c4.getSuitString());
-        System.out.println("Clubs is expected, and it says " + c4.getSuitString() + " PASS");
+        assertEquals(SPADE + " is expected, and it says " + c1.getSuitString(), SPADE, c1.getSuitString());
+        System.out.println(SPADE + " is expected, and it says " + c1.getSuitString() + ": PASS");
+        assertEquals(HEART + " is expected, and it says " + c2.getSuitString(), HEART, c2.getSuitString());
+        System.out.println(HEART + " is expected, and it says " + c2.getSuitString() + ": PASS");
+        assertEquals(DIAMOND + " is expected, and it says " + c3.getSuitString(), DIAMOND, c3.getSuitString());
+        System.out.println(DIAMOND + " is expected, and it says " + c3.getSuitString() + ": PASS");
+        assertEquals(CLUB + " is expected, and it says " + c4.getSuitString(), CLUB, c4.getSuitString());
+        System.out.println(CLUB + " is expected, and it says " + c4.getSuitString() + ": PASS");
         assertEquals("??? is expected, and it says " + c7.getSuitString(), "???", c7.getSuitString());
-        System.out.println("??? is expected, and it says " + c7.getSuitString() + " PASS");
+        System.out.println("??? is expected, and it says " + c7.getSuitString() + ": PASS");
         System.out.println("==========================================================");
     }
 
     public void testCreateToString() throws Exception {
-        assertEquals("Ace of Spades is expected, and it says " + c1.toString(), "Ace of Spades", c1.toString());
-        System.out.println("Ace of Spades is expected, and it says " + c1.toString() + " PASS");
-        assertEquals("Jack of Hearts is expected, and it says " + c2.toString(), "Jack of Hearts", c2.toString());
-        System.out.println("Jack of Hearts is expected, and it says " + c2.toString() + " PASS");
-        assertEquals("Queen of Diamonds is expected, and it says " + c3.toString(), "Queen of Diamonds", c3.toString());
-        System.out.println("Queen of Diamonds is expected, and it says " + c3.toString() + " PASS");
-        assertEquals("King of Clubs is expected, and it says " + c4.toString(), "King of Clubs", c4.toString());
-        System.out.println("King of Clubs is expected, and it says " + c4.toString() + " PASS");
-        assertEquals("5 of Spades is expected, and it says " + c5.toString(), "5 of Spades", c5.toString());
-        System.out.println("5 of Spades is expected, and it says " + c5.toString() + " PASS");
-        assertEquals("?? of Spades is expected, and it says " + c6.toString(), "?? of Spades", c6.toString());
-        System.out.println("?? of Spades is expected, and it says " + c6.toString() + " PASS");
+        assertEquals("Ace of " + SPADE + " is expected, and it says " + c1.toString(), "Ace of " + SPADE, c1.toString());
+        System.out.println("Ace of " + SPADE + " is expected, and it says " + c1.toString() + ": PASS");
+        assertEquals("Jack of " + HEART + " is expected, and it says " + c2.toString(), "Jack of " + HEART, c2.toString());
+        System.out.println("Jack of " + HEART + " is expected, and it says " + c2.toString() + ": PASS");
+        assertEquals("Queen of " + DIAMOND + " is expected, and it says " + c3.toString(), "Queen of " + DIAMOND, c3.toString());
+        System.out.println("Queen of " + DIAMOND + " is expected, and it says " + c3.toString() + ": PASS");
+        assertEquals("King of " + CLUB + " is expected, and it says " + c4.toString(), "King of " + CLUB, c4.toString());
+        System.out.println("King of " + CLUB + " is expected, and it says " + c4.toString() + ": PASS");
+        assertEquals("5 of " + SPADE + " is expected, and it says " + c5.toString(), "5 of " + SPADE, c5.toString());
+        System.out.println("5 of Spades is expected, and it says " + c5.toString() + ": PASS");
+        assertEquals("?? of " + SPADE + " is expected, and it says " + c6.toString(), "?? of " + SPADE, c6.toString());
+        System.out.println("?? of Spades is expected, and it says " + c6.toString() + ": PASS");
         assertEquals("3 of ??? is expected, and it says " + c7.toString(), "3 of ???", c7.toString());
-        System.out.println("3 of ??? is expected, and it says " + c7.toString() + " PASS");
+        System.out.println("3 of ??? is expected, and it says " + c7.toString() + ": PASS");
         System.out.println("==========================================================");
     }
 }

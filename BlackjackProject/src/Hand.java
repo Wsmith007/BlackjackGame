@@ -15,6 +15,7 @@ public class Hand {
     }
 
     public int getHandValue() {
+        handValue = 0;
         int cardValue;
         cardsInHand = hand.size();
 

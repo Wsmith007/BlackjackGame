@@ -17,10 +17,10 @@ public class HandTest extends TestCase {
         h1.hand.add(new Card(6,2));
     }
 
-    public void testHandValue() throws Exception {
+    public void testHandValue() {
         h1Value = h1.getHandValue();
         assertEquals("The value of the hand should be " + h1Value + ", and it's " + h1.getHandValue(), 21, h1Value);
-        System.out.println("The value of the hand should be " + h1Value + ", and it's " + h1Value);
+        System.out.println("The value of the hand should be " + h1Value + "; HAND = " + h1Value);
         System.out.println("==========================================================");
     }
 }

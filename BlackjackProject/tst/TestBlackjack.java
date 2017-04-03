@@ -7,10 +7,10 @@ public class TestBlackjack extends TestCase {
     private Blackjack bj;
 
     protected void setUp() throws Exception {
+        bj = new Blackjack();
     }
 
     public void testPlayerHit() throws Exception {
-        bj.playRound();
     }
 
     public void testPlayerWin() throws Exception {

@@ -4,6 +4,7 @@
 public class Card {
 
     public static final int SPADES = 0, HEARTS = 1, DIAMONDS = 2, CLUBS = 3, ACE = 1, KING = 13, QUEEN = 12, JACK = 11;
+    public static final String SPADE = "\u2660", HEART = "\u2661", DIAMOND = "\u2662", CLUB = "\u2663";
     private final int SUIT;
     private int value;
 
@@ -48,13 +49,13 @@ public class Card {
     public String getSuitString() {
         switch (SUIT) {
             case SPADES:
-                return "Spades";
+                return SPADE;
             case HEARTS:
-                return "Hearts";
+                return HEART;
             case DIAMONDS:
-                return "Diamonds";
+                return DIAMOND;
             case CLUBS:
-                return "Clubs";
+                return CLUB;
             default:
                 return "???";
         }

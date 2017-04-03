@@ -5,6 +5,7 @@ import org.junit.Test;
  * Created by WSmith01 on 3/29/2017.
  */
 public class DeckTest extends TestCase {
+    private final String SPADE = "\u2660", HEART = "\u2661", DIAMOND = "\u2662", CLUB = "\u2663";
     private Deck d1, d2;
 
     //Creates 2 identical deck objects
@@ -20,22 +21,22 @@ public class DeckTest extends TestCase {
     }
 
     public void testFirstAndLastSuits() throws Exception {
-        assertEquals("Ace of Spades is expected, and it says " + d1.deck.get(0).toString(), "Ace of Spades", d1.deck.get(0).toString());
-        System.out.println("Ace of Spades is expected, and it says " + d1.deck.get(0).toString() + " PASS");
-        assertEquals("King of Spades is expected, and it says " + d1.deck.get(12).toString(), "King of Spades", d1.deck.get(12).toString());
-        System.out.println("King of Spades is expected, and it says " + d1.deck.get(12).toString() + " PASS");
-        assertEquals("Ace of Hearts is expected, and it says " + d1.deck.get(13).toString(), "Ace of Hearts", d1.deck.get(13).toString());
-        System.out.println("Ace of Hearts is expected, and it says " + d1.deck.get(13).toString() + " PASS");
-        assertEquals("King of Hearts is expected, and it says " + d1.deck.get(25).toString(), "King of Hearts", d1.deck.get(25).toString());
-        System.out.println("King of Hearts is expected, and it says " + d1.deck.get(25).toString() + " PASS");
-        assertEquals("Ace of Diamonds is expected, and it says " + d1.deck.get(26).toString(), "Ace of Diamonds", d1.deck.get(26).toString());
-        System.out.println("Ace of Diamonds is expected, and it says " + d1.deck.get(26).toString() + " PASS");
-        assertEquals("King of Diamonds is expected, and it says " + d1.deck.get(38).toString(), "King of Diamonds", d1.deck.get(38).toString());
-        System.out.println("King of Diamonds is expected, and it says " + d1.deck.get(38).toString() + " PASS");
-        assertEquals("Ace of Clubs is expected, and it says " + d1.deck.get(39).toString(), "Ace of Clubs", d1.deck.get(39).toString());
-        System.out.println("Ace of Clubs is expected, and it says " + d1.deck.get(39).toString() + " PASS");
-        assertEquals("King of Clubs is expected, and it says " + d1.deck.get(51).toString(), "King of Clubs", d1.deck.get(51).toString());
-        System.out.println("King of Clubs is expected, and it says " + d1.deck.get(51).toString() + " PASS");
+        assertEquals("Ace of " + SPADE + " is expected, and it says " + d1.deck.get(0).toString(), "Ace of " + SPADE, d1.deck.get(0).toString());
+        System.out.println("Ace of " + SPADE + " is expected, and it says " + d1.deck.get(0).toString() + " PASS");
+        assertEquals("King of " + SPADE + " is expected, and it says " + d1.deck.get(12).toString(), "King of " + SPADE, d1.deck.get(12).toString());
+        System.out.println("King of " + SPADE + " is expected, and it says " + d1.deck.get(12).toString() + " PASS");
+        assertEquals("Ace of " + HEART + " is expected, and it says " + d1.deck.get(13).toString(), "Ace of " + HEART, d1.deck.get(13).toString());
+        System.out.println("Ace of " + HEART + " is expected, and it says " + d1.deck.get(13).toString() + " PASS");
+        assertEquals("King of " + HEART + " is expected, and it says " + d1.deck.get(25).toString(), "King of " + HEART, d1.deck.get(25).toString());
+        System.out.println("King of " + HEART + " is expected, and it says " + d1.deck.get(25).toString() + " PASS");
+        assertEquals("Ace of " + DIAMOND + " is expected, and it says " + d1.deck.get(26).toString(), "Ace of " + DIAMOND, d1.deck.get(26).toString());
+        System.out.println("Ace of " + DIAMOND + " is expected, and it says " + d1.deck.get(26).toString() + " PASS");
+        assertEquals("King of " + DIAMOND + " is expected, and it says " + d1.deck.get(38).toString(), "King of " + DIAMOND, d1.deck.get(38).toString());
+        System.out.println("King of " + DIAMOND + " is expected, and it says " + d1.deck.get(38).toString() + " PASS");
+        assertEquals("Ace of " + CLUB + " is expected, and it says " + d1.deck.get(39).toString(), "Ace of " + CLUB , d1.deck.get(39).toString());
+        System.out.println("Ace of " + CLUB + " is expected, and it says " + d1.deck.get(39).toString() + " PASS");
+        assertEquals("King of " + CLUB + " is expected, and it says " + d1.deck.get(51).toString(), "King of " + CLUB, d1.deck.get(51).toString());
+        System.out.println("King of " + CLUB + " is expected, and it says " + d1.deck.get(51).toString() + " PASS");
         System.out.println("==========================================================");
     }
 
@@ -68,16 +69,16 @@ public class DeckTest extends TestCase {
         Card c10 = d2.dealCard();
 
         System.out.println("DEAL BEFORE SHUFFLE:");
-        assertEquals("Ace of Spdaes should be dealt, it gave " + c1.toString(), "Ace of Spades", c1.toString());
-        System.out.println("Ace of Spdaes should be dealt, it gave " + c1.toString() + " PASS");
-        assertEquals("2 of Spdaes should be dealt, it gave " + c2.toString(), "2 of Spades", c2.toString());
-        System.out.println("2 of Spdaes should be dealt, it gave " + c2.toString() + " PASS");
-        assertEquals("3 of Spdaes should be dealt, it gave " + c3.toString(), "3 of Spades", c3.toString());
-        System.out.println("3 of Spdaes should be dealt, it gave " + c3.toString() + " PASS");
-        assertEquals("4 of Spdaes should be dealt, it gave " + c4.toString(), "4 of Spades", c4.toString());
-        System.out.println("4 of Spdaes should be dealt, it gave " + c4.toString() + " PASS");
-        assertEquals("5 of Spdaes should be dealt, it gave " + c5.toString(), "5 of Spades", c5.toString());
-        System.out.println("5 of Spdaes should be dealt, it gave " + c5.toString() + " PASS");
+        assertEquals("Ace of " + SPADE + " is expected, and it gave " + c1.toString(), "Ace of " + SPADE, c1.toString());
+        System.out.println("Ace of " + SPADE + " is expected, and it gave " + c1.toString() + " PASS");
+        assertEquals("2 of " + SPADE + " is expected, and it gave " + c2.toString(), "2 of " + SPADE, c2.toString());
+        System.out.println("2 of " + SPADE + " is expected, and it gave " + c2.toString() + " PASS");
+        assertEquals("3 of " + SPADE + " is expected, and it gave " + c3.toString(), "3 of " + SPADE, c3.toString());
+        System.out.println("3 of " + SPADE + " is expected, and it gave " + c3.toString() + " PASS");
+        assertEquals("4 of " + SPADE + " is expected, and it gave " + c4.toString(), "4 of " + SPADE, c4.toString());
+        System.out.println("4 of " + SPADE + " is expected, and it gave " + c4.toString() + " PASS");
+        assertEquals("5 of " + SPADE + " is expected, and it gave " + c5.toString(), "5 of " + SPADE, c5.toString());
+        System.out.println("5 of " + SPADE + " is expected, and it gave " + c5.toString() + " PASS");
         System.out.println();
         System.out.println("DEAL AFTER SHUFFLE:");
         System.out.println("Ace of Spdaes should be dealt, it gave " + c6.toString() + " PASS");
@@ -112,7 +113,7 @@ public class DeckTest extends TestCase {
 
         assertEquals(52,cardsUsed1);
         assertEquals(1,cardsUsed2);
-        System.out.println(firstCard1.toString() + " : " + firstCard2);
+        System.out.println(firstCard1.toString() + " (SHOULD BE DIFFERENT FROM) " + firstCard2);
         System.out.println("==========================================================");
     }
 }
